@@ -1,0 +1,29 @@
+header {
+    height: 75px;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo {
+    color: #000;
+}
+
+.add-btn {
+    margin-bottom: 30px;
+}
+
+.action-btns {
+    display: flex;
+}
+
+.action-btn {
+    margin-right: 10px;
+}

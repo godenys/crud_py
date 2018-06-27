@@ -1,0 +1,45 @@
+{% include 'header.html' %}
+    <main>
+        <div class="container">
+            <div class="row">
+                <a href="/create" class="btn btn-success add-btn">Add</a>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">name</th>
+                      <th scope="col">email</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for user in users %}
+                    <tr>
+                      <th scope="row">{{ user.id }}</th>
+                      <td>{{ user.name }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>
+                          <div class="action-btns">
+                             <div class="action-btn">
+                                  <a class="btn btn-primary" href="/edit/{{ user.id }}">
+                                      <i class="fas fa-edit"></i>
+                                  </a>
+                              </div>
+                              <div class="action-btn">
+                                   <form action="/remove">
+                                        <input type="hidden" name="id" value="{{ user.id }}">
+                                        <button class="btn btn-danger" type="submit">
+                                          <i class="fas fa-trash-alt" style="color: #fff"></i>
+                                        </button>
+                                      </form>
+                              </div>
+                          </div>
+                      </td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+{% include 'footer.html' %}
